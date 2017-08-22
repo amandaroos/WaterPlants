@@ -2,6 +2,9 @@ package com.amandfarrell.www.waterplants;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -9,5 +12,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Button pressed", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
+
+//URL for testing: https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=5&minmag=3&orderby=time
